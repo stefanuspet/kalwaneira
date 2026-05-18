@@ -20,7 +20,7 @@ export default function Nav() {
 
   // Close drawer on resize to desktop
   useEffect(() => {
-    const handler = () => { if (window.innerWidth >= 768) setMenuOpen(false) }
+    const handler = () => { if (window.innerWidth >= 1024) setMenuOpen(false) }
     window.addEventListener('resize', handler)
     return () => window.removeEventListener('resize', handler)
   }, [])

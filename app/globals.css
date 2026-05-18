@@ -1632,11 +1632,14 @@ section { position: relative; }
 .footer-bot a:hover { color: var(--gold); }
 
 /* ─── Responsive ───────────────────────────────────────────── */
+body { overflow-x: hidden; }
+
 @media (max-width: 1100px) {
   .nav-links { gap: 22px; }
   .nav-links a { font-size: 12.5px; }
   .nav-brand-sub { display: none; }
 }
+
 @media (max-width: 1024px) {
   .container { padding: 0 28px; }
   .nav { padding: 0 28px; gap: 16px; grid-template-columns: auto auto; }
@@ -1652,13 +1655,31 @@ section { position: relative; }
   .houses-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
 }
+
+@media (max-width: 768px) {
+  /* Hide Enquire from nav — it lives in the drawer already */
+  .nav-actions .btn { display: none; }
+  /* Reduce hero section */
+  .hero { padding: 40px 0 64px; }
+  .hero-seal { display: none; }
+  .hero-fig { aspect-ratio: 3 / 2; }
+  /* Collapse catalog header */
+  .catalog-header { grid-template-columns: 1fr; gap: 24px; }
+  .catalog-filter { justify-self: start; }
+  /* Reduce house card */
+  .house { padding: 28px 24px; min-height: auto; }
+}
+
 @media (max-width: 640px) {
-  .nav-links { display: none; }
   .container { padding: 0 20px; }
   .about, .vm, .why, .process, .catalog, .houses, .contact { padding: 72px 0; }
+  .hero { padding: 32px 0 52px; }
+  /* Hide placeholder image on small screens, keep stats */
+  .hero-fig { display: none; }
   .catalog-grid { grid-template-columns: 1fr; }
   .why-grid, .process-steps { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bot { flex-direction: column; align-items: flex-start; gap: 12px; }
   .vm-side { position: static; }
   .channel { grid-template-columns: 1fr; gap: 4px; }
   .pillar { grid-template-columns: 52px 1fr; }
