@@ -1,86 +1,86 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Hero() {
   return (
-    <section className="hero" id="top">
-      <div className="container">
-        <div className="hero-grid">
-          <div className="hero-left">
-            <div className="hero-meta">
-              <span className="pill">
-                <span className="pulse" />
-                Open for export season 2026
-              </span>
-              <span className="pill est">Jakarta · 06°12&apos;S 106°49&apos;E</span>
-            </div>
+    <section
+      className="relative overflow-hidden min-h-svh flex items-center"
+      id="top"
+    >
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero.jpeg"
+          alt=""
+          fill
+          priority
+          style={{ objectFit: "cover", objectPosition: "center top" }}
+        />
+      </div>
 
-            <h1 className="display-1">
-              The <em>archipelago</em>,<br />
-              carefully<br />
-              delivered.<span className="gold-rule" />
-            </h1>
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background: [
+            "linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.60) 60%, rgba(0,0,0,0.35) 100%)",
+            "linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%)",
+          ].join(", "),
+        }}
+      />
 
-            <div className="hero-bottom">
-              <div className="prose">
-                <p>
-                  PT Kalwaneira Terra Prospera is an Indonesian export house curating the finest
-                  of the sea and the soil for international buyers. Two brands, one standard —{' '}
-                  <em>precision over volume</em>.
-                </p>
-              </div>
-              <div className="hero-actions">
-                <a href="#houses" className="btn btn-red">
-                  Meet our brands <span className="arrow">→</span>
-                </a>
-                <a href="#contact" className="btn btn-ghost">Request a sample</a>
-              </div>
+      <div className="relative z-[2] w-full max-w-[1320px] mx-auto px-12 lg:px-7 sm:px-5 py-[120px] sm:py-20">
+        <div className="max-w-[680px]">
+          {/* Heading */}
+          <h1
+            className="font-extrabold leading-[0.96] tracking-[-0.035em] text-paper"
+            style={{ fontSize: "clamp(56px, 7.5vw, 108px)" }}
+          >
+            The <em className="not-italic text-red">archipelago</em>,<br />
+            carefully
+            <br />
+            delivered.
+            <span
+              className="inline-block align-middle mb-3.5 mr-3.5 h-1 rounded-sm"
+              style={{
+                width: "64px",
+                background: "linear-gradient(90deg, #F5A623 0%, #C2870A 100%)",
+              }}
+            />
+          </h1>
+
+          {/* Body + CTA */}
+          <div className="mt-12 flex flex-col gap-8">
+            <p className="max-w-[520px] text-base leading-[1.7] text-white/90">
+              PT Kalwaneira Terra Prospera is an Indonesian export house
+              curating the finest of the soil and the sea for international
+              buyers. Two brands, one standard —{" "}
+              <em className="italic text-paper">precision over volume</em>.
+            </p>
+
+            <div className="flex gap-3 flex-wrap">
+              {/* Primary CTA */}
+              <a
+                href="#houses"
+                className="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-full text-[13px] font-semibold text-white bg-red border border-transparent transition-all duration-200 hover:bg-red-deep hover:-translate-y-px shadow-[0_4px_14px_-6px_rgba(225,29,42,0.5)] group"
+              >
+                Meet our brands
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-[3px]">
+                  →
+                </span>
+              </a>
+
+              {/* Ghost CTA */}
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-full text-[13px] font-semibold text-ink bg-paper-soft border border-line transition-all duration-200 hover:border-ink group"
+              >
+                Request a sample
+              </Link>
             </div>
           </div>
-
-          <aside className="hero-right" aria-label="Company snapshot">
-            <figure className="hero-fig">
-              <span className="corner tl">PLATE&nbsp;Nº&nbsp;01 · Vanilla Planifolia</span>
-              <div className="placeholder">
-                <span className="badge">Product imagery</span>
-                <span className="label">— sun-cured vanilla beans —</span>
-              </div>
-              <span className="corner br">Sourced · Flores / Java / Sulawesi</span>
-            </figure>
-
-            <div className="hero-stats" role="group" aria-label="At a glance">
-              <div className="hero-stat">
-                <div className="num">02</div>
-                <div className="lbl">Export houses</div>
-              </div>
-              <div className="hero-stat">
-                <div className="num">15+</div>
-                <div className="lbl">Sourcing regions</div>
-              </div>
-              <div className="hero-stat">
-                <div className="num">B2B</div>
-                <div className="lbl">Global trade</div>
-              </div>
-            </div>
-          </aside>
-        </div>
-
-        <div className="hero-seal" aria-hidden="true">
-          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <path id="circletext" d="M 60,60 m -46,0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" />
-            </defs>
-            <circle cx="60" cy="60" r="58" fill="none" stroke="#B8893E" strokeWidth="0.7" />
-            <circle cx="60" cy="60" r="42" fill="none" stroke="#B8893E" strokeWidth="0.4" />
-            <text fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#8A6628" letterSpacing="3">
-              <textPath href="#circletext" startOffset="0">
-                {'  KALWANEIRA · TERRA · PROSPERA · INDONESIA · '}
-              </textPath>
-            </text>
-            <g transform="translate(60,60)" stroke="#8A6628" strokeWidth="0.8" fill="none">
-              <path d="M -10,-10 L 10,10 M -10,10 L 10,-10" />
-              <circle r="3" fill="#8B1818" stroke="none" />
-            </g>
-          </svg>
         </div>
       </div>
     </section>
-  )
+  );
 }

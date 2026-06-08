@@ -1,15 +1,15 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { navLinks } from '@/data/content'
-import { useScrollSpy } from '@/lib/hooks/useScrollSpy'
-
-const SECTION_IDS = ['about', 'houses', 'catalog', 'vm', 'process']
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const activeId = useScrollSpy(SECTION_IDS, 120)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 12)
@@ -18,7 +18,8 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
-  // Close drawer on resize to desktop
+  useEffect(() => { const id = setTimeout(() => setMenuOpen(false), 0); return () => clearTimeout(id) }, [pathname])
+
   useEffect(() => {
     const handler = () => { if (window.innerWidth >= 1024) setMenuOpen(false) }
     window.addEventListener('resize', handler)
@@ -26,69 +27,118 @@ export default function Nav() {
   }, [])
 
   return (
-    <div className={`nav-wrap${scrolled ? ' scrolled' : ''}`} id="navWrap">
-      <nav className="nav" aria-label="Primary">
-        <a href="#top" className="nav-brand" onClick={() => setMenuOpen(false)}>
-          <span className="nav-mark"><span>K</span></span>
-          <span className="nav-brand-text">
-            <span className="nav-brand-name">Kalwaneira</span>
-            <span className="nav-brand-sub">PT Terra Prospera</span>
-          </span>
-        </a>
+    <div
+      className={[
+        'sticky top-0 z-50 border-b transition-[border-color,background-color] duration-[280ms]',
+        'backdrop-blur-md [-webkit-backdrop-filter:blur(14px)]',
+        scrolled
+          ? 'bg-paper/95 border-line'
+          : 'bg-paper/85 border-transparent',
+      ].join(' ')}
+    >
+      {/* ── Desktop nav ── */}
+      <div className="max-w-[1320px] mx-auto px-12 lg:px-7 sm:px-5">
+        <nav
+          className="grid items-center gap-8 h-[76px]"
+          style={{ gridTemplateColumns: 'auto 1fr auto' }}
+          aria-label="Primary"
+        >
+          {/* Brand */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image
+              src="/images/Logo-transparent.png"
+              alt="KTP"
+              width={40}
+              height={40}
+              className="object-contain shrink-0"
+              priority
+            />
+            <span className="flex flex-col gap-[2px]">
+              <span className="font-bold text-[16px] text-ink tracking-[-0.015em] leading-none">
+                Kalwaneira
+              </span>
+              <span className="hidden lg:block text-[9.5px] tracking-[0.18em] text-muted uppercase leading-none whitespace-nowrap font-medium">
+                PT Kalwaneira Terra Prospera
+              </span>
+            </span>
+          </Link>
 
-        <ul className="nav-links" aria-label="Navigation">
-          {navLinks.map((link) => {
-            const sectionId = link.href.replace('#', '')
-            return (
+          {/* Desktop links */}
+          <ul className="hidden lg:flex items-center justify-center gap-9">
+            {navLinks.map((link) => {
+              const isActive = pathname.startsWith(link.href)
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={[
+                      'relative text-[13.5px] font-medium tracking-[0.005em] py-1.5 whitespace-nowrap transition-colors duration-200',
+                      'after:absolute after:left-1/2 after:bottom-0 after:-translate-x-1/2',
+                      'after:w-[18px] after:h-0.5 after:rounded-sm after:bg-red',
+                      'after:transition-transform after:duration-[240ms]',
+                      isActive
+                        ? 'text-red after:scale-x-100'
+                        : 'text-ink-soft hover:text-red after:scale-x-0 hover:after:scale-x-100',
+                    ].join(' ')}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+
+          {/* Actions */}
+          <div className="flex items-center gap-4">
+            <Link
+              href="/contact"
+              className="hidden lg:inline-flex items-center gap-2.5 px-[22px] py-3 text-[13px] font-semibold tracking-[0.005em] rounded-full bg-red text-white border border-transparent transition-all duration-200 hover:bg-red-deep hover:-translate-y-px shadow-[0_4px_14px_-6px_rgba(225,29,42,0.5)] hover:shadow-[0_6px_20px_-6px_rgba(225,29,42,0.55)] group"
+            >
+              Enquire <span className="inline-block transition-transform duration-200 group-hover:translate-x-[3px]">→</span>
+            </Link>
+
+            {/* Hamburger */}
+            <button
+              className="flex lg:hidden flex-col gap-[5px] p-2"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <span className="block w-[22px] h-[2px] bg-ink rounded-sm transition-all duration-200" />
+              <span className="block w-[22px] h-[2px] bg-ink rounded-sm transition-all duration-200" />
+              <span className="block w-[22px] h-[2px] bg-ink rounded-sm transition-all duration-200" />
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      {/* ── Mobile drawer ── */}
+      {menuOpen && (
+        <div
+          className="fixed inset-x-0 bottom-0 bg-paper z-40 flex flex-col gap-8 p-8 border-t border-line"
+          style={{ top: '76px' }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+        >
+          <ul className="flex flex-col">
+            {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
-                  className={activeId === sectionId ? 'active' : undefined}
+                  className="block text-[22px] font-semibold text-ink py-4 border-b border-line tracking-[-0.02em] hover:text-red transition-colors duration-200"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
-            )
-          })}
-        </ul>
-
-        <div className="nav-actions">
-          <div className="nav-lang">
-            <span className="dot" />
-            EN · ID
-          </div>
-          <a href="#contact" className="btn btn-primary" onClick={() => setMenuOpen(false)}>
-            Enquire <span className="arrow">→</span>
-          </a>
-          <button
-            className="nav-hamburger"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
+            ))}
+          </ul>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2.5 px-[22px] py-3 text-[13px] font-semibold rounded-full bg-red text-white transition-all duration-200 hover:bg-red-deep group w-fit"
           >
-            <span />
-            <span />
-            <span />
-          </button>
-        </div>
-      </nav>
-
-      {menuOpen && (
-        <div className="nav-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
-          <nav>
-            <ul>
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} onClick={() => setMenuOpen(false)}>
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <a href="#contact" className="btn btn-primary" onClick={() => setMenuOpen(false)}>
-            Enquire <span className="arrow">→</span>
-          </a>
+            Enquire <span className="inline-block transition-transform duration-200 group-hover:translate-x-[3px]">→</span>
+          </Link>
         </div>
       )}
     </div>

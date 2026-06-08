@@ -9,6 +9,8 @@ export interface Product {
   cat: ProductCategory
   grade: string
   origin: string
+  desc?: string
+  image?: string
   attrKey: string
   attrValue: string
   visualClass: VisualClass
