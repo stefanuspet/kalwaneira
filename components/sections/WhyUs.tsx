@@ -1,16 +1,19 @@
-import { whyCards } from '@/data/content'
+import { whyCards } from "@/data/content";
 
 export default function WhyUs() {
   return (
-    <section className="relative bg-red-deep text-paper py-[120px] sm:py-[72px] overflow-hidden" id="why">
+    <section
+      className="relative bg-red-deep text-paper py-[120px] sm:py-[72px] overflow-hidden"
+      id="why"
+    >
       {/* Radial gradient overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background: [
-            'radial-gradient(circle at 20% 10%, rgba(245,166,35,0.25) 0%, transparent 50%)',
-            'radial-gradient(circle at 80% 90%, rgba(245,166,35,0.18) 0%, transparent 50%)',
-          ].join(', '),
+            "radial-gradient(circle at 20% 10%, rgba(245,166,35,0.25) 0%, transparent 50%)",
+            "radial-gradient(circle at 80% 90%, rgba(245,166,35,0.18) 0%, transparent 50%)",
+          ].join(", "),
         }}
       />
 
@@ -30,9 +33,10 @@ export default function WhyUs() {
         <div className="flex flex-col items-center text-center mb-[72px] gap-5">
           <h2
             className="font-extrabold leading-[1.05] tracking-[-0.03em] text-paper"
-            style={{ fontSize: 'clamp(36px, 4.5vw, 60px)' }}
+            style={{ fontSize: "clamp(36px, 4.5vw, 60px)" }}
           >
-            Four reasons international buyers<br />
+            Three reasons international buyers
+            <br />
             <em className="not-italic text-gold-soft">return</em>.
           </h2>
           <p className="text-base leading-relaxed text-paper/65 max-w-[480px]">
@@ -61,5 +65,5 @@ export default function WhyUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }

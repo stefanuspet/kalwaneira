@@ -27,24 +27,27 @@ export default function About() {
             className="font-bold leading-[1.05] tracking-[-0.03em] text-ink"
             style={{ fontSize: "clamp(36px, 4.5vw, 60px)" }}
           >
-            A trading house built on{" "}
-            <em className="not-italic text-red font-bold">precision</em>,<br />not volume.
+            An export house built for{" "}
+            <em className="not-italic text-red font-bold">
+              enduring partnerships.
+            </em>
           </h2>
-          <p className="text-[16px] leading-[1.7] text-ink-soft font-normal max-w-[600px]">
-            Kalwaneira Terra Prospera is an Indonesian export house. Under one parent,
-            two specialist brands operate in tandem — each focused, each independent
-            in style, each held to the same standard of curation.
-          </p>
-          <p className="text-[16px] leading-[1.7] text-ink-soft font-normal max-w-[600px]">
-            We work directly with our suppliers across the Indonesian archipelago.
-            Every batch is evaluated by hand. Every shipment is documented to the last gram.
+          <p className="text-[16px] leading-[1.7] text-ink-soft font-normal max-w-200">
+            Kalwaneira Terra Prospera is an Indonesian export house. Under one
+            parent, two specialist brands operate in tandem, with each focused,
+            independent in style, and held to the same standard of curation. We
+            work directly with our suppliers across the Indonesian archipelago.
+            Every batch is evaluated by hand. Every shipment is documented to
+            the last gram.
           </p>
           <a
-            href="#houses"
+            href="/nusateraso"
             className="inline-flex items-center gap-2 text-[14px] font-semibold text-red border-b border-red/40 pb-px hover:border-red transition-colors duration-150 group"
           >
             Explore the brands{" "}
-            <span className="inline-block transition-transform duration-200 group-hover:translate-x-[3px]">→</span>
+            <span className="inline-block transition-transform duration-200 group-hover:translate-x-[3px]">
+              →
+            </span>
           </a>
         </div>
 
@@ -58,7 +61,8 @@ export default function About() {
               <div
                 className="w-11 h-11 rounded-[12px] text-white flex items-center justify-center text-[14px] font-bold tracking-[-0.01em] shrink-0"
                 style={{
-                  background: "linear-gradient(135deg, var(--color-red) 0%, var(--color-red-deep) 100%)",
+                  background:
+                    "linear-gradient(135deg, var(--color-red) 0%, var(--color-red-deep) 100%)",
                   boxShadow: "0 6px 14px -8px rgba(225,29,42,0.5)",
                 }}
               >
@@ -67,7 +71,7 @@ export default function About() {
               <div className="text-[17px] font-bold tracking-[-0.015em] text-ink">
                 {pillar.title}
               </div>
-              <div className="text-[14px] text-ink-soft leading-[1.65]">
+              <div className="text-[14px] text-ink-soft leading-[1.65] text-justify">
                 {pillar.text}
               </div>
             </div>

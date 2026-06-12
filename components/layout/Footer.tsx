@@ -1,36 +1,45 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
-const linkCls = 'text-sm text-paper/70 hover:text-gold transition-colors duration-[180ms]'
+const linkCls =
+  "text-sm text-paper/70 hover:text-gold transition-colors duration-[180ms]";
 
 const footerCols = [
   {
-    title: 'The house',
+    title: "The house",
     links: [
-      { label: 'About', href: '/about' },
-      { label: 'Vision & mission', href: '/about#vm' },
-      { label: 'Process', href: '/about#process' },
-      { label: 'Why us', href: '/#why' },
+      { label: "About", href: "/about" },
+      { label: "Vision & mission", href: "/about#vm" },
+      { label: "Process", href: "/about#process" },
+      { label: "Why us", href: "/#why" },
     ],
   },
   {
-    title: 'Brands',
+    title: "Brands",
     links: [
-      { label: 'Zanetuno', href: '/zanetuno' },
-      { label: 'Nusateraso', href: '/nusateraso' },
-      { label: 'zanetuno.com ↗', href: 'https://www.zanetuno.com', external: true },
-      { label: 'nusateraso.com ↗', href: 'https://www.nusateraso.com', external: true },
+      { label: "Zanetuno", href: "/zanetuno" },
+      { label: "Nusateraso", href: "/nusateraso" },
+      {
+        label: "zanetuno.com ↗",
+        href: "https://www.zanetuno.com",
+        external: true,
+      },
+      {
+        label: "nusateraso.com ↗",
+        href: "https://www.nusateraso.com",
+        external: true,
+      },
     ],
   },
   {
-    title: 'Contact',
+    title: "Contact",
     links: [
-      { label: 'Enquiry desk', href: '/contact' },
-      { label: 'info@nusateraso.com', href: 'mailto:info@nusateraso.com' },
-      { label: '+62 822 5840 2154', href: 'tel:+6282258402154' },
+      { label: "Enquiry desk", href: "/contact" },
+      { label: "info@nusateraso.com", href: "mailto:info@nusateraso.com" },
+      { label: "+62 822 5840 2154", href: "tel:+6282258402154" },
     ],
   },
-]
+];
 
 export default function Footer() {
   return (
@@ -38,13 +47,15 @@ export default function Footer() {
       {/* Top gradient rule */}
       <div
         className="absolute top-0 inset-x-0 h-1"
-        style={{ background: 'linear-gradient(90deg, #E11D2A 0%, #F5A623 50%, #E11D2A 100%)' }}
+        style={{
+          background:
+            "linear-gradient(90deg, #E11D2A 0%, #F5A623 50%, #E11D2A 100%)",
+        }}
       />
 
       <div className="max-w-[1320px] mx-auto px-12 lg:px-7 sm:px-5">
         {/* Top grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-12 pb-16 border-b border-paper/10">
-
           {/* Brand column */}
           <div className="flex flex-col gap-5">
             <Image
@@ -55,11 +66,13 @@ export default function Footer() {
               className="object-contain"
             />
             <p className="text-[15px] text-paper/65 max-w-[300px] leading-relaxed">
-              An Indonesian export house. The archipelago, carefully delivered.
+              A Global Trading House. Connecting Markets, Creating Value.
             </p>
             <p className="text-[11px] tracking-[0.1em] text-paper/50 leading-[1.8] font-medium uppercase">
-              PT Kalwaneira Terra Prospera<br />
-              Jakarta · Indonesia · GMT+7<br />
+              PT Kalwaneira Terra Prospera
+              <br />
+              Jakarta · Indonesia · GMT+7
+              <br />
               NPWP / Tax Reg. on request
             </p>
           </div>
@@ -74,7 +87,12 @@ export default function Footer() {
                 {col.links.map((link) => (
                   <li key={link.href}>
                     {link.external ? (
-                      <a href={link.href} target="_blank" rel="noopener noreferrer" className={linkCls}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={linkCls}
+                      >
                         {link.label}
                       </a>
                     ) : (
@@ -95,14 +113,44 @@ export default function Footer() {
             © 2026 PT Kalwaneira Terra Prospera — All rights reserved.
           </span>
           <span className="text-[11px] tracking-[0.05em] text-paper/40">
-            <a href="https://kalwaneira.com" className="hover:text-gold transition-colors duration-[180ms]">kalwaneira.com</a>
-            {' · '}
-            <a href="https://www.zanetuno.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors duration-[180ms]">zanetuno.com</a>
-            {' · '}
-            <a href="https://www.nusateraso.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors duration-[180ms]">nusateraso.com</a>
+            <a
+              href="https://kalwaneira.com"
+              className="hover:text-gold transition-colors duration-[180ms]"
+            >
+              kalwaneira.com
+            </a>
+            {" · "}
+            <a
+              href="https://www.zanetuno.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold transition-colors duration-[180ms]"
+            >
+              zanetuno.com
+            </a>
+            {" · "}
+            <a
+              href="https://www.nusateraso.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold transition-colors duration-[180ms]"
+            >
+              nusateraso.com
+            </a>
+          </span>
+          <span className="text-[10px] tracking-[0.05em] text-paper/30">
+            Website by{" "}
+            <a
+              href="https://stefra.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold/80 underline decoration-paper/20 underline-offset-2 transition-colors duration-[180ms]"
+            >
+              stefra.id
+            </a>
           </span>
         </div>
       </div>
     </footer>
-  )
+  );
 }

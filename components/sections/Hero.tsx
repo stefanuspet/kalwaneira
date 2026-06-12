@@ -54,7 +54,7 @@ export default function Hero() {
             <p className="max-w-[520px] text-base leading-[1.7] text-white/90">
               PT Kalwaneira Terra Prospera is an Indonesian export house
               curating the finest of the soil and the sea for international
-              buyers. Two brands, one standard —{" "}
+              buyers, uniting two brands under a single standard of{" "}
               <em className="italic text-paper">precision over volume</em>.
             </p>
 
