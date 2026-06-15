@@ -34,7 +34,7 @@ export default function Hero() {
           {/* Heading */}
           <h1
             className="font-extrabold leading-[0.96] tracking-[-0.035em] text-paper"
-            style={{ fontSize: "clamp(56px, 7.5vw, 108px)" }}
+            style={{ fontSize: "clamp(36px, 4.5vw, 64px)" }}
           >
             The <em className="not-italic text-red">archipelago</em>,<br />
             carefully

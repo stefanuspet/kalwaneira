@@ -49,3 +49,19 @@ export interface ContactChannel {
   value: string
   action: string
 }
+
+export interface SubProduct {
+  id: string
+  name: string
+  desc: string
+  note?: string
+  image?: string
+}
+
+export interface ProductGroup {
+  id: string
+  name: string
+  image?: string
+  desc: string
+  subs: SubProduct[]
+}

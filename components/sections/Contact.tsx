@@ -55,7 +55,7 @@ export default function Contact() {
           <div>
             <h2
               className="font-extrabold leading-[1.05] tracking-[-0.035em] text-ink mb-6"
-              style={{ fontSize: 'clamp(36px, 4.5vw, 60px)' }}
+              style={{ fontSize: 'clamp(28px, 3.2vw, 46px)' }}
             >
               Open a quiet<br />
               <em className="not-italic text-red">conversation.</em>

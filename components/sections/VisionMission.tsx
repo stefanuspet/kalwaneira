@@ -25,7 +25,7 @@ export default function VisionMission() {
         <div className="flex flex-col items-center text-center mb-14">
           <h2
             className="font-extrabold leading-[1.05] tracking-[-0.03em] text-ink"
-            style={{ fontSize: "clamp(36px, 4vw, 54px)" }}
+            style={{ fontSize: "clamp(28px, 3.2vw, 46px)" }}
           >
             What we intend to <em className="not-italic text-red">build</em>.
           </h2>

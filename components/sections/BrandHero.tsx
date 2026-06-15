@@ -65,7 +65,7 @@ export default function BrandHero({ brand }: { brand: Brand }) {
           <div>
             <div
               className="font-extrabold leading-none tracking-[-0.04em] text-paper mb-4"
-              style={{ fontSize: 'clamp(56px, 7vw, 96px)' }}
+              style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}
             >
               {brand.name}
             </div>

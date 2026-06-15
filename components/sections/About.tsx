@@ -25,7 +25,7 @@ export default function About() {
         <div className="flex flex-col items-center text-center mb-14 gap-5">
           <h2
             className="font-bold leading-[1.05] tracking-[-0.03em] text-ink"
-            style={{ fontSize: "clamp(36px, 4.5vw, 60px)" }}
+            style={{ fontSize: "clamp(28px, 3.2vw, 46px)" }}
           >
             An export house built for{" "}
             <em className="not-italic text-red font-bold">

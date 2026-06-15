@@ -143,7 +143,7 @@ export default function Houses() {
         <div className="flex flex-col items-center text-center py-12 gap-5">
           <h2
             className="font-extrabold leading-[1.05] tracking-[-0.035em] text-paper"
-            style={{ fontSize: "clamp(40px, 5.5vw, 72px)" }}
+            style={{ fontSize: "clamp(28px, 3.2vw, 46px)" }}
           >
             Two specialist brands.
             <br />

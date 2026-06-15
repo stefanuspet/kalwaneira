@@ -33,7 +33,7 @@ export default function WhyUs() {
         <div className="flex flex-col items-center text-center mb-[72px] gap-5">
           <h2
             className="font-extrabold leading-[1.05] tracking-[-0.03em] text-paper"
-            style={{ fontSize: "clamp(36px, 4.5vw, 60px)" }}
+            style={{ fontSize: "clamp(28px, 3.2vw, 46px)" }}
           >
             Three reasons international buyers
             <br />
