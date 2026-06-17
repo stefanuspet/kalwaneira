@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const linkCls =
-  "text-sm text-paper/70 hover:text-gold transition-colors duration-[180ms]";
+  "text-sm text-ink/60 hover:text-gold-deep transition-colors duration-[180ms]";
 
 const footerCols = [
   {
@@ -17,16 +17,16 @@ const footerCols = [
   {
     title: "Brands",
     links: [
-      { label: "Zanetuno", href: "/zanetuno" },
       { label: "Nusateraso", href: "/nusateraso" },
-      {
-        label: "zanetuno.com ↗",
-        href: "https://www.zanetuno.com",
-        external: true,
-      },
       {
         label: "nusateraso.com ↗",
         href: "https://www.nusateraso.com",
+        external: true,
+      },
+      { label: "Zanetuno", href: "/zanetuno" },
+      {
+        label: "zanetuno.com ↗",
+        href: "https://www.zanetuno.com",
         external: true,
       },
     ],
@@ -35,7 +35,7 @@ const footerCols = [
     title: "Contact",
     links: [
       { label: "Enquiry desk", href: "/contact" },
-      { label: "info@nusateraso.com", href: "mailto:info@nusateraso.com" },
+      { label: "info@kalwaneira.com", href: "mailto:info@kalwaneira.com" },
       { label: "+62 822 5840 2154", href: "tel:+6282258402154" },
     ],
   },
@@ -43,7 +43,7 @@ const footerCols = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-ink text-paper pt-24 pb-10 overflow-hidden">
+    <footer className="relative text-ink pt-24 pb-10 overflow-hidden border-t border-line" style={{ backgroundColor: '#FAF6F0' }}>
       {/* Top gradient rule */}
       <div
         className="absolute top-0 inset-x-0 h-1"
@@ -55,25 +55,23 @@ export default function Footer() {
 
       <div className="max-w-[1320px] mx-auto px-12 lg:px-7 sm:px-5">
         {/* Top grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-12 pb-16 border-b border-paper/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-12 pb-16 border-b border-line">
           {/* Brand column */}
           <div className="flex flex-col gap-5">
             <Image
-              src="/images/Logo-transparent.png"
+              src="/images/Logo.png"
               alt="Kalwaneira Terra Prospera"
               width={88}
               height={88}
               className="object-contain"
             />
-            <p className="text-[15px] text-paper/65 max-w-[300px] leading-relaxed">
+            <p className="text-[15px] text-ink-soft max-w-[300px] leading-relaxed">
               A Global Trading House. Connecting Markets, Creating Value.
             </p>
-            <p className="text-[11px] tracking-[0.1em] text-paper/50 leading-[1.8] font-medium uppercase">
+            <p className="text-[11px] tracking-[0.1em] text-muted leading-[1.8] font-medium uppercase">
               PT Kalwaneira Terra Prospera
               <br />
               Jakarta · Indonesia · GMT+7
-              <br />
-              NPWP / Tax Reg. on request
             </p>
           </div>
 
@@ -109,10 +107,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex items-center justify-between pt-8 flex-wrap gap-3 sm:flex-col sm:items-start">
-          <span className="text-[11px] tracking-[0.05em] text-paper/40">
+          <span className="text-[11px] tracking-[0.05em] text-muted">
             © 2026 PT Kalwaneira Terra Prospera — All rights reserved.
           </span>
-          <span className="text-[11px] tracking-[0.05em] text-paper/40">
+          <span className="text-[11px] tracking-[0.05em] text-muted">
             <a
               href="https://kalwaneira.com"
               className="hover:text-gold transition-colors duration-[180ms]"
@@ -138,7 +136,7 @@ export default function Footer() {
               nusateraso.com
             </a>
           </span>
-          <span className="text-[10px] tracking-[0.05em] text-paper/30">
+          <span className="text-[10px] tracking-[0.05em] text-muted/60">
             Website by{" "}
             <a
               href="https://stefra.id"

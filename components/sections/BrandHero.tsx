@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import type { Brand } from '@/data/brands'
+import Image from "next/image";
+import Link from "next/link";
+import type { Brand } from "@/data/brands";
 
 export default function BrandHero({ brand }: { brand: Brand }) {
-  const isSea = brand.variant === 'sea'
+  const isSea = brand.variant === "sea";
 
   const visStyle = isSea
     ? {
@@ -19,40 +19,45 @@ export default function BrandHero({ brand }: { brand: Brand }) {
           repeating-linear-gradient(135deg, transparent 0 10px, rgba(255,255,255,0.04) 10px 11px),
           linear-gradient(180deg, #C2870A 0%, #5A3D03 100%)
         `,
-      }
+      };
 
   return (
     <section
       className="bg-ink text-paper py-[120px] sm:py-[72px] relative overflow-hidden"
       style={{
         background: `
-          radial-gradient(circle at 15% 15%, ${isSea ? 'rgba(29,111,161,0.15)' : 'rgba(225,29,42,0.10)'} 0%, transparent 45%),
-          radial-gradient(circle at 85% 85%, ${isSea ? 'rgba(86,165,214,0.10)' : 'rgba(245,166,35,0.10)'} 0%, transparent 45%),
+          radial-gradient(circle at 15% 15%, ${isSea ? "rgba(29,111,161,0.15)" : "rgba(225,29,42,0.10)"} 0%, transparent 45%),
+          radial-gradient(circle at 85% 85%, ${isSea ? "rgba(86,165,214,0.10)" : "rgba(245,166,35,0.10)"} 0%, transparent 45%),
           #1A1A1A
         `,
       }}
     >
       <div className="max-w-[1320px] mx-auto px-12 lg:px-7 sm:px-5">
-
         {/* Label row */}
         <div className="flex items-center gap-3 mb-14">
           <span
             className="inline-flex items-center gap-2 px-[14px] py-[6px] border border-paper/20 rounded-full text-[9.5px] tracking-[0.18em] uppercase font-medium text-paper/80"
-            style={{ fontFamily: 'var(--font-mono)' }}
+            style={{ fontFamily: "var(--font-mono)" }}
           >
             <span
               className="w-[7px] h-[7px] rounded-full"
               style={
                 isSea
-                  ? { background: 'var(--color-sea-soft)', boxShadow: '0 0 8px var(--color-sea-soft)' }
-                  : { background: 'var(--color-gold)', boxShadow: '0 0 8px var(--color-gold)' }
+                  ? {
+                      background: "var(--color-sea-soft)",
+                      boxShadow: "0 0 8px var(--color-sea-soft)",
+                    }
+                  : {
+                      background: "var(--color-gold)",
+                      boxShadow: "0 0 8px var(--color-gold)",
+                    }
               }
             />
             {brand.chip}
           </span>
           <span
             className="text-[10.5px] tracking-[0.18em] font-medium text-paper/40"
-            style={{ fontFamily: 'var(--font-mono)' }}
+            style={{ fontFamily: "var(--font-mono)" }}
           >
             {brand.index}
           </span>
@@ -65,13 +70,15 @@ export default function BrandHero({ brand }: { brand: Brand }) {
           <div>
             <div
               className="font-extrabold leading-none tracking-[-0.04em] text-paper mb-4"
-              style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}
+              style={{ fontSize: "clamp(36px, 4.5vw, 64px)" }}
             >
               {brand.name}
             </div>
             <p
               className="font-medium text-[20px] mb-6 tracking-[-0.01em]"
-              style={{ color: isSea ? 'var(--color-sea-soft)' : 'var(--color-gold)' }}
+              style={{
+                color: isSea ? "var(--color-sea-soft)" : "var(--color-gold)",
+              }}
             >
               {brand.tagline}
             </p>
@@ -100,7 +107,9 @@ export default function BrandHero({ brand }: { brand: Brand }) {
                 className="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-full text-[13px] font-semibold text-white bg-red border border-transparent transition-all duration-200 hover:bg-red-deep hover:-translate-y-px shadow-[0_4px_14px_-6px_rgba(225,29,42,0.5)] group"
               >
                 Visit {brand.domain}
-                <span className="inline-block transition-transform duration-200 group-hover:translate-x-[3px]">↗</span>
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-[3px]">
+                  ↗
+                </span>
               </a>
               <Link
                 href="/contact"
@@ -122,28 +131,28 @@ export default function BrandHero({ brand }: { brand: Brand }) {
                 alt={brand.name}
                 fill
                 priority
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                style={{ objectFit: "cover", objectPosition: "center" }}
               />
             ) : (
               <>
                 <span
                   className="absolute top-0 left-0 text-[9.5px] tracking-[0.18em] uppercase p-[18px] font-medium text-paper/70"
-                  style={{ fontFamily: 'var(--font-mono)' }}
+                  style={{ fontFamily: "var(--font-mono)" }}
                 >
                   {brand.visCornerTl}
                 </span>
                 <span
                   className="font-extrabold tracking-[-0.04em] text-white"
                   style={{
-                    fontSize: 'clamp(48px, 6vw, 80px)',
-                    textShadow: '0 4px 20px rgba(0,0,0,0.3)',
+                    fontSize: "clamp(48px, 6vw, 80px)",
+                    textShadow: "0 4px 20px rgba(0,0,0,0.3)",
                   }}
                 >
                   {brand.name}
                 </span>
                 <span
                   className="absolute bottom-0 right-0 text-[9.5px] tracking-[0.18em] uppercase p-[18px] font-medium text-paper/70"
-                  style={{ fontFamily: 'var(--font-mono)' }}
+                  style={{ fontFamily: "var(--font-mono)" }}
                 >
                   {brand.visCornerBr}
                 </span>
@@ -153,5 +162,5 @@ export default function BrandHero({ brand }: { brand: Brand }) {
         </div>
       </div>
     </section>
-  )
+  );
 }

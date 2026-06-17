@@ -107,7 +107,7 @@ function NusaterasoGroups() {
                       src={sub.image}
                       alt={sub.name}
                       fill
-                      style={{ objectFit: 'cover', objectPosition: 'top' }}
+                      style={{ objectFit: 'cover', objectPosition: 'center' }}
                     />
                   )}
                   {sub.note && (

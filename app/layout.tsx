@@ -23,6 +23,15 @@ export const metadata: Metadata = {
   description:
     "An Indonesian export house connecting the archipelago's finest natural resources with discerning global buyers. Parent company of Zanetuno and Nusateraso.",
   metadataBase: new URL('https://kalwaneira.com'),
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png' }],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'PT Kalwaneira Terra Prospera',
     description: 'Premium Indonesian Natural Products for Global Markets',
