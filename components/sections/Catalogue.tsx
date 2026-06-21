@@ -172,9 +172,9 @@ export default function Catalogue({ brand }: { brand?: ProductBrand }) {
             className="font-extrabold leading-[1.05] tracking-[-0.035em] text-ink"
             style={{ fontSize: "clamp(28px, 3.2vw, 46px)" }}
           >
-            A working selection
+            A curated selection
             <br />
-            of what we ship.
+            of our export-grade offerings.
           </h2>
         </div>
 
@@ -183,7 +183,7 @@ export default function Catalogue({ brand }: { brand?: ProductBrand }) {
           <NusaterasoGroups />
         ) : (
           /* Zanetuno: flat product cards */
-          <div className="grid grid-cols-4 gap-5 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+          <div className="grid grid-cols-4 gap-5 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-2">
             {visible.map((product) => (
               <article
                 key={product.id}

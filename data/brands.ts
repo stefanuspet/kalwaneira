@@ -21,7 +21,7 @@ export const zanetuno: Brand = {
   visCornerBr: "— ZNT —",
   name: "Zanetuno",
   tagline: "Of the Indonesian seas.",
-  desc: "Premium frozen seafood sourced from trusted fisheries across the archipelago, with cold-chain integrity, export documentation, and consistent grade all tailored for distributors, processors, and restaurant groups abroad.",
+  desc: "High grade frozen seafood sourced from trusted fisheries across the archipelago, with cold-chain integrity, export documentation, and consistent grade all tailored for distributors, processors, and restaurant groups abroad.",
   tags: ["Yellowfin Tuna", "Vannamei Shrimp", "Squid", "Octopus", "Snapper"],
   domain: "zanetuno.com",
   href: "https://www.zanetuno.com",

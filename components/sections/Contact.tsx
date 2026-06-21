@@ -1,48 +1,47 @@
-'use client'
+"use client";
 
-import { useState, type FormEvent } from 'react'
-import { contactChannels } from '@/data/content'
+import { useState, type FormEvent } from "react";
+import { contactChannels } from "@/data/content";
 
-type House = 'zanetuno' | 'nusateraso' | 'both'
+type House = "zanetuno" | "nusateraso" | "both";
 
 interface FormState {
-  house: House
-  name: string
-  company: string
-  email: string
-  brief: string
+  house: House;
+  name: string;
+  company: string;
+  email: string;
+  brief: string;
 }
 
 export default function Contact() {
   const [form, setForm] = useState<FormState>({
-    house: 'nusateraso',
-    name: '',
-    company: '',
-    email: '',
-    brief: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
+    house: "nusateraso",
+    name: "",
+    company: "",
+    email: "",
+    brief: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+    e.preventDefault();
+    setSubmitted(true);
+  };
 
   return (
     <section className="bg-paper py-[120px] sm:py-[72px]" id="contact">
       <div className="max-w-[1320px] mx-auto px-12 lg:px-7 sm:px-5">
-
         {/* Label row */}
         <div className="flex items-center gap-3 mb-10">
           <span
             className="text-[10.5px] tracking-[0.18em] uppercase text-gold-deep font-medium"
-            style={{ fontFamily: 'var(--font-mono)' }}
+            style={{ fontFamily: "var(--font-mono)" }}
           >
             — Get in touch
           </span>
           <span
             className="text-[10.5px] tracking-[0.15em] text-muted font-medium"
-            style={{ fontFamily: 'var(--font-mono)' }}
+            style={{ fontFamily: "var(--font-mono)" }}
           >
             CORRESPONDENCE
           </span>
@@ -54,16 +53,17 @@ export default function Contact() {
           {/* Left — intro */}
           <div>
             <h2
-              className="font-extrabold leading-[1.05] tracking-[-0.035em] text-ink mb-6"
-              style={{ fontSize: 'clamp(28px, 3.2vw, 46px)' }}
+              className="font-extrabold leading-[1.05] tracking-[-0.035em] text-red mb-6"
+              style={{ fontSize: "clamp(28px, 3.2vw, 46px)" }}
             >
-              Open a quiet<br />
-              <em className="not-italic text-red">conversation.</em>
+              Share your requirements, destination, and timeline with us. We
+              will provide a tailored logistical strategy to ensure seamless
+              delivery.
             </h2>
-            <p className="text-[16px] text-ink-soft leading-[1.7] mb-10 max-w-[420px] italic">
-              &ldquo;Tell us what you need, where it&apos;s going, and when. We&apos;ll write
-              back with a path.&rdquo;
-            </p>
+            {/* <p className="text-[16px] text-ink-soft leading-[1.7] mb-10 max-w-[420px] italic">
+              &ldquo;Tell us what you need, where it&apos;s going, and when.
+              We&apos;ll write back with a path.&rdquo;
+            </p> */}
 
             {/* Contact channels */}
             <div className="flex flex-col gap-0">
@@ -71,22 +71,16 @@ export default function Contact() {
                 <div
                   key={i}
                   className="grid items-center py-4 border-b border-line"
-                  style={{ gridTemplateColumns: '90px 1fr auto' }}
+                  style={{ gridTemplateColumns: "90px 1fr" }}
                 >
                   <span
                     className="text-[10.5px] tracking-[0.12em] uppercase text-muted font-medium"
-                    style={{ fontFamily: 'var(--font-mono)' }}
+                    style={{ fontFamily: "var(--font-mono)" }}
                   >
                     {ch.key}
                   </span>
                   <span className="text-[14px] text-ink font-normal">
                     {ch.value}
-                  </span>
-                  <span
-                    className="text-[11px] tracking-[0.08em] text-red font-semibold"
-                    style={{ fontFamily: 'var(--font-mono)' }}
-                  >
-                    {ch.action}
                   </span>
                 </div>
               ))}
@@ -103,21 +97,18 @@ export default function Contact() {
               <div className="text-[19px] font-bold text-ink tracking-[-0.02em] mb-1">
                 Send an enquiry.
               </div>
-              <div className="text-[13px] text-muted">
-                For sampling, RFQ and partnership requests. Replies within one working day.
-              </div>
             </div>
 
             {/* Brand choice */}
             <div className="flex flex-col gap-2">
               <label
                 className="text-[11px] tracking-[0.08em] uppercase text-muted-soft font-medium"
-                style={{ fontFamily: 'var(--font-mono)' }}
+                style={{ fontFamily: "var(--font-mono)" }}
               >
                 Interested in
               </label>
               <div className="grid grid-cols-3 gap-2">
-                {(['nusateraso', 'zanetuno', 'both'] as House[]).map((h) => (
+                {(["nusateraso", "zanetuno", "both"] as House[]).map((h) => (
                   <span key={h}>
                     <input
                       type="radio"
@@ -130,11 +121,11 @@ export default function Contact() {
                     <label
                       htmlFor={`house-${h}`}
                       className={[
-                        'flex items-center justify-center px-2 py-[11px] border rounded-[8px] text-[11px] font-semibold tracking-[0.005em] cursor-pointer transition-all duration-[180ms] text-center',
+                        "flex items-center justify-center px-2 py-[11px] border rounded-[8px] text-[11px] font-semibold tracking-[0.005em] cursor-pointer transition-all duration-[180ms] text-center",
                         form.house === h
-                          ? 'bg-red border-red text-white shadow-[0_4px_10px_-4px_rgba(225,29,42,0.4)]'
-                          : 'border-line text-ink-soft hover:border-red hover:text-red',
-                      ].join(' ')}
+                          ? "bg-red border-red text-white shadow-[0_4px_10px_-4px_rgba(225,29,42,0.4)]"
+                          : "border-line text-ink-soft hover:border-red hover:text-red",
+                      ].join(" ")}
                     >
                       {h.charAt(0).toUpperCase() + h.slice(1)}
                     </label>
@@ -145,15 +136,33 @@ export default function Contact() {
 
             {/* Fields */}
             {[
-              { id: 'contact-name', label: 'Full name', type: 'text', placeholder: 'e.g. Mei Tanaka', key: 'name' as keyof FormState },
-              { id: 'contact-company', label: 'Company & country', type: 'text', placeholder: 'e.g. Aoyama Trading, Tokyo', key: 'company' as keyof FormState },
-              { id: 'contact-email', label: 'Business email', type: 'email', placeholder: 'you@company.com', key: 'email' as keyof FormState },
+              {
+                id: "contact-name",
+                label: "Full name",
+                type: "text",
+                placeholder: "",
+                key: "name" as keyof FormState,
+              },
+              {
+                id: "contact-company",
+                label: "Company & country",
+                type: "text",
+                placeholder: "",
+                key: "company" as keyof FormState,
+              },
+              {
+                id: "contact-email",
+                label: "Business email",
+                type: "email",
+                placeholder: "",
+                key: "email" as keyof FormState,
+              },
             ].map((field) => (
               <div key={field.id} className="flex flex-col gap-1">
                 <label
                   htmlFor={field.id}
                   className="text-[11px] tracking-[0.08em] uppercase text-muted-soft font-medium"
-                  style={{ fontFamily: 'var(--font-mono)' }}
+                  style={{ fontFamily: "var(--font-mono)" }}
                 >
                   {field.label}
                 </label>
@@ -162,10 +171,15 @@ export default function Contact() {
                   type={field.type}
                   placeholder={field.placeholder}
                   value={form[field.key] as string}
-                  onChange={(e) => setForm((f) => ({ ...f, [field.key]: e.target.value }))}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, [field.key]: e.target.value }))
+                  }
                   required
                   className="w-full text-[14px] text-ink bg-transparent outline-none transition-colors duration-200 pb-2 pt-2 placeholder:text-muted-soft focus:[border-bottom-color:var(--color-red)]"
-                  style={{ border: 'none', borderBottom: '2px solid var(--color-line)' }}
+                  style={{
+                    border: "none",
+                    borderBottom: "2px solid var(--color-line)",
+                  }}
                 />
               </div>
             ))}
@@ -175,18 +189,23 @@ export default function Contact() {
               <label
                 htmlFor="contact-brief"
                 className="text-[11px] tracking-[0.08em] uppercase text-muted-soft font-medium"
-                style={{ fontFamily: 'var(--font-mono)' }}
+                style={{ fontFamily: "var(--font-mono)" }}
               >
                 Brief
               </label>
               <textarea
                 id="contact-brief"
                 rows={3}
-                placeholder="Product, target grade, indicative volume, destination port…"
+                placeholder=""
                 value={form.brief}
-                onChange={(e) => setForm((f) => ({ ...f, brief: e.target.value }))}
+                onChange={(e) =>
+                  setForm((f) => ({ ...f, brief: e.target.value }))
+                }
                 className="w-full text-[14px] text-ink bg-transparent outline-none resize-none transition-colors duration-200 pb-2 pt-2 placeholder:text-muted-soft focus:[border-bottom-color:var(--color-red)]"
-                style={{ border: 'none', borderBottom: '2px solid var(--color-line)' }}
+                style={{
+                  border: "none",
+                  borderBottom: "2px solid var(--color-line)",
+                }}
               />
             </div>
 
@@ -200,12 +219,14 @@ export default function Contact() {
                 className="inline-flex items-center gap-2.5 px-[22px] py-3 rounded-full text-[13px] font-semibold text-white bg-red border border-transparent transition-all duration-200 hover:bg-red-deep hover:-translate-y-px shadow-[0_4px_14px_-6px_rgba(225,29,42,0.5)] self-start mt-2 group"
               >
                 Send enquiry
-                <span className="inline-block transition-transform duration-200 group-hover:translate-x-[3px]">→</span>
+                <span className="inline-block transition-transform duration-200 group-hover:translate-x-[3px]">
+                  →
+                </span>
               </button>
             )}
           </form>
         </div>
       </div>
     </section>
-  )
+  );
 }

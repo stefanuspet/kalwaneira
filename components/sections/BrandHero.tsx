@@ -17,7 +17,7 @@ export default function BrandHero({ brand }: { brand: Brand }) {
 
   return (
     <section
-      className={`py-[120px] sm:py-[72px] relative overflow-hidden ${isSea ? 'text-paper' : 'text-ink'}`}
+      className="py-[120px] sm:py-[72px] relative overflow-hidden text-paper"
       style={isSea ? {
         background: `
           radial-gradient(circle at 15% 15%, rgba(29,111,161,0.15) 0%, transparent 45%),
@@ -30,7 +30,7 @@ export default function BrandHero({ brand }: { brand: Brand }) {
         {/* Label row */}
         <div className="flex items-center gap-3 mb-14">
           <span
-            className={`inline-flex items-center gap-2 px-[14px] py-[6px] border rounded-full text-[9.5px] tracking-[0.18em] uppercase font-medium ${isSea ? 'border-paper/20 text-paper/80' : 'border-ink/20 text-ink/80'}`}
+            className="inline-flex items-center gap-2 px-[14px] py-[6px] border rounded-full text-[9.5px] tracking-[0.18em] uppercase font-medium border-paper/20 text-paper/80"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             <span
@@ -43,12 +43,12 @@ export default function BrandHero({ brand }: { brand: Brand }) {
             {brand.chip}
           </span>
           <span
-            className={`text-[10.5px] tracking-[0.18em] font-medium ${isSea ? 'text-paper/40' : 'text-ink/50'}`}
+            className="text-[10.5px] tracking-[0.18em] font-medium text-paper/40"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             {brand.index}
           </span>
-          <span className={`flex-1 h-px ${isSea ? 'bg-paper/10' : 'bg-ink/20'}`} />
+          <span className="flex-1 h-px bg-paper/10" />
         </div>
 
         {/* Main grid */}
@@ -56,18 +56,17 @@ export default function BrandHero({ brand }: { brand: Brand }) {
           {/* Left */}
           <div>
             <div
-              className={`font-extrabold leading-none tracking-[-0.04em] mb-4 ${isSea ? 'text-paper' : 'text-ink'}`}
+              className="font-extrabold leading-none tracking-[-0.04em] mb-4 text-paper"
               style={{ fontSize: "clamp(36px, 4.5vw, 64px)" }}
             >
               {brand.name}
             </div>
             <p
-              className="font-medium text-[20px] mb-6 tracking-[-0.01em]"
-              style={{ color: isSea ? "var(--color-sea-soft)" : "var(--color-ink)" }}
+              className="font-medium text-[20px] mb-6 tracking-[-0.01em] text-paper/90"
             >
               {brand.tagline}
             </p>
-            <p className={`text-[16px] leading-[1.7] mb-8 max-w-[460px] ${isSea ? 'text-paper/75' : 'text-ink/80'}`}>
+            <p className="text-[16px] leading-[1.7] mb-8 max-w-[460px] text-paper/80">
               {brand.desc}
             </p>
 
@@ -76,7 +75,7 @@ export default function BrandHero({ brand }: { brand: Brand }) {
               {brand.tags.map((tag) => (
                 <span
                   key={tag}
-                  className={`text-[11px] font-medium px-[11px] py-[6px] rounded-full ${isSea ? 'bg-paper/8 border border-paper/14 text-paper/85' : 'bg-ink/8 border border-ink/15 text-ink/85'}`}
+                  className={`text-[11px] font-medium px-[11px] py-[6px] rounded-full ${isSea ? 'bg-paper/10 border border-paper/20 text-paper/90' : 'bg-red/90 border border-red text-white'}`}
                 >
                   {tag}
                 </span>
@@ -96,7 +95,7 @@ export default function BrandHero({ brand }: { brand: Brand }) {
               </a>
               <Link
                 href="/contact"
-                className={`inline-flex items-center gap-2.5 px-[22px] py-3 rounded-full text-[13px] font-semibold transition-all duration-200 ${isSea ? 'bg-paper/10 text-paper border border-paper/20 hover:bg-paper/15' : 'bg-ink/10 text-ink border border-ink/20 hover:bg-ink/15'}`}
+                className={`inline-flex items-center gap-2.5 px-[22px] py-3 rounded-full text-[13px] font-semibold transition-all duration-200 hover:-translate-y-px ${isSea ? 'bg-paper/10 text-paper border border-paper/20 hover:bg-paper/20' : 'bg-red text-white border border-transparent hover:bg-red-deep shadow-[0_4px_14px_-6px_rgba(225,29,42,0.5)]'}`}
               >
                 Request a sample
               </Link>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { pillars } from "@/data/content";
 
 export default function About() {
@@ -10,32 +11,32 @@ export default function About() {
           {/* Label row */}
           <div className="flex items-center gap-3 mb-10">
             <span
-              className="text-[10.5px] tracking-[0.18em] uppercase text-ink font-semibold"
+              className="text-[10.5px] tracking-[0.18em] uppercase text-white font-semibold"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               — The Holding
             </span>
             <span
-              className="text-[10.5px] tracking-[0.15em] text-ink/60 font-medium"
+              className="text-[10.5px] tracking-[0.15em] text-white/60 font-medium"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               SECTION 01 / 03
             </span>
-            <span className="flex-1 h-px bg-ink/20" />
+            <span className="flex-1 h-px bg-white/20" />
           </div>
 
           {/* Heading */}
           <div className="flex flex-col items-center text-center mb-14 gap-5">
             <h2
-              className="font-bold leading-[1.05] tracking-[-0.03em] text-ink"
+              className="font-bold leading-[1.05] tracking-[-0.03em] text-white"
               style={{ fontSize: "clamp(28px, 3.2vw, 46px)" }}
             >
               An export house built for{" "}
-              <em className="not-italic font-bold underline decoration-ink/40 underline-offset-4">
+              <em className="not-italic font-bold underline decoration-white/40 underline-offset-4">
                 enduring partnerships.
               </em>
             </h2>
-            <p className="text-[16px] leading-[1.7] text-ink/80 font-normal max-w-[640px]">
+            <p className="text-[16px] leading-[1.7] text-white/85 font-normal max-w-[640px]">
               Kalwaneira Terra Prospera is an Indonesian export house. Under one
               parent, two specialist brands operate in tandem — each focused,
               independent in style, and held to the same standard of curation.
@@ -43,38 +44,30 @@ export default function About() {
             </p>
             <a
               href="/nusateraso"
-              className="inline-flex items-center gap-2 text-[14px] font-semibold text-ink border-b-2 border-ink/40 pb-px hover:opacity-70 transition-opacity duration-150 group"
+              className="inline-flex items-center gap-2 text-[14px] font-semibold text-white border-b-2 border-white/40 pb-px hover:opacity-70 transition-opacity duration-150 group"
             >
               Explore the brands{" "}
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-[3px]">→</span>
             </a>
           </div>
 
-          {/* 4-image grid: 2 col x 2 row */}
+          {/* 2-image grid */}
           <div className="grid grid-cols-2 gap-4">
-            <div
-              className="h-[260px] rounded-[14px] overflow-hidden flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #7a3f0f 0%, #4a2005 100%)' }}
-            >
-              <span className="text-white/50 text-[11px] tracking-[0.15em] uppercase font-medium">Gambar Port · Export</span>
+            <div className="h-[260px] rounded-[14px] overflow-hidden relative">
+              <Image
+                src="/images/about/about1.jpeg"
+                alt="Port Export"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+              />
             </div>
-            <div
-              className="h-[260px] rounded-[14px] overflow-hidden flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #5c3408 0%, #3a1f04 100%)' }}
-            >
-              <span className="text-white/50 text-[11px] tracking-[0.15em] uppercase font-medium">Gambar Quality Control</span>
-            </div>
-            <div
-              className="h-[260px] rounded-[14px] overflow-hidden flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #8a4e12 0%, #5c3408 100%)' }}
-            >
-              <span className="text-white/50 text-[11px] tracking-[0.15em] uppercase font-medium">Gambar Packaging</span>
-            </div>
-            <div
-              className="h-[260px] rounded-[14px] overflow-hidden flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #6b3510 0%, #3f1e05 100%)' }}
-            >
-              <span className="text-white/50 text-[11px] tracking-[0.15em] uppercase font-medium">Gambar Business Meeting</span>
+            <div className="h-[260px] rounded-[14px] overflow-hidden relative">
+              <Image
+                src="/images/about/about2.jpeg"
+                alt="Quality Control"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+              />
             </div>
           </div>
         </div>

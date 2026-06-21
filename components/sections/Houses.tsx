@@ -4,23 +4,24 @@ import { zanetuno, nusateraso } from "@/data/brands";
 import type { Brand } from "@/data/brands";
 
 function HouseCard({ house }: { house: Brand }) {
+  const isSea = house.variant === "sea";
   return (
     <article
       className={[
         "relative flex flex-col p-10 min-h-[600px] rounded-2xl border transition-all duration-[320ms] cursor-pointer",
         "hover:-translate-y-1 hover:border-gold/30 hover:shadow-[0_20px_50px_-20px_rgba(0,0,0,0.4)]",
-        house.variant === "sea"
+        isSea
           ? "bg-[#1a2535] border-paper/6"
-          : "bg-[#232020] border-paper/6",
+          : "bg-[#DA6629] border-white/10",
       ].join(" ")}
     >
       {/* Header */}
       <div className="flex items-center justify-between mb-7">
-        <span className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-paper/20 rounded-full text-[10px] tracking-[0.15em] uppercase text-paper/70 font-medium">
+        <span className={`inline-flex items-center gap-2 px-3.5 py-1.5 border rounded-full text-[10px] tracking-[0.15em] uppercase font-medium ${isSea ? 'border-paper/20 text-paper/70' : 'border-white/30 text-white/80'}`}>
           <span className="w-[5px] h-[5px] rounded-full bg-gold" />
           {house.chip}
         </span>
-        <span className="text-[10.5px] tracking-[0.18em] text-paper/40 font-medium">
+        <span className={`text-[10.5px] tracking-[0.18em] font-medium ${isSea ? 'text-paper/40' : 'text-white/50'}`}>
           {house.index}
         </span>
       </div>
@@ -30,7 +31,7 @@ function HouseCard({ house }: { house: Brand }) {
         className={[
           "h-[220px] rounded-xl mb-7 relative overflow-hidden border border-paper/6",
           !house.image
-            ? house.variant === "sea"
+            ? isSea
               ? "bg-[linear-gradient(135deg,#1D6FA1_0%,#0E3A5C_100%)] flex items-center justify-center"
               : "bg-[linear-gradient(135deg,#C2870A_0%,#6B3E00_100%)] flex items-center justify-center"
             : "",
@@ -59,13 +60,13 @@ function HouseCard({ house }: { house: Brand }) {
       </div>
 
       {/* Name & tagline */}
-      <div className="text-[28px] font-extrabold text-paper tracking-[-0.025em] leading-[1.1] mb-2">
+      <div className={`text-[28px] font-extrabold tracking-[-0.025em] leading-[1.1] mb-2 ${isSea ? 'text-paper' : 'text-white'}`}>
         {house.name}
       </div>
-      <div className="text-[13px] tracking-[0.08em] uppercase text-gold mb-4 font-medium">
+      <div className={`text-[13px] tracking-[0.08em] uppercase mb-4 font-medium ${isSea ? 'text-gold' : 'text-white/70'}`}>
         {house.tagline}
       </div>
-      <p className="text-sm text-paper/65 leading-[1.7] mb-6 flex-1">
+      <p className={`text-sm leading-[1.7] mb-6 flex-1 ${isSea ? 'text-paper/65' : 'text-white/85'}`}>
         {house.desc}
       </p>
 
@@ -74,7 +75,7 @@ function HouseCard({ house }: { house: Brand }) {
         {house.tags.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-[5px] border border-paper/12 rounded-full text-[10.5px] tracking-[0.06em] text-paper/55 font-medium"
+            className={`px-3 py-[5px] border rounded-full text-[10.5px] tracking-[0.06em] font-medium ${isSea ? 'border-paper/12 text-paper/55' : 'border-white/30 text-white/80'}`}
           >
             {tag}
           </span>
@@ -82,17 +83,17 @@ function HouseCard({ house }: { house: Brand }) {
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-between pt-5 border-t border-paper/8">
+      <div className={`flex items-center justify-between pt-5 border-t ${isSea ? 'border-paper/8' : 'border-white/15'}`}>
         <a
           href={house.href}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col gap-[3px]"
         >
-          <span className="text-[10px] tracking-[0.12em] uppercase text-paper/40 font-medium">
+          <span className={`text-[10px] tracking-[0.12em] uppercase font-medium ${isSea ? 'text-paper/40' : 'text-white/50'}`}>
             Visit site
           </span>
-          <span className="text-[12px] text-paper/60 hover:text-gold transition-colors duration-[180ms]">
+          <span className={`text-[12px] transition-colors duration-[180ms] ${isSea ? 'text-paper/60 hover:text-gold' : 'text-white/70 hover:text-white'}`}>
             {house.domain} ↗
           </span>
         </a>
@@ -113,43 +114,33 @@ function HouseCard({ house }: { house: Brand }) {
 export default function Houses() {
   return (
     <section
-      className="relative bg-ink text-paper py-[120px] sm:py-[72px] overflow-hidden"
+      className="relative bg-white text-ink py-[120px] sm:py-[72px] overflow-hidden"
       id="houses"
     >
-      {/* Radial gradient overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: [
-            "radial-gradient(circle at 15% 15%, rgba(225,29,42,0.10) 0%, transparent 45%)",
-            "radial-gradient(circle at 85% 85%, rgba(245,166,35,0.10) 0%, transparent 45%)",
-          ].join(", "),
-        }}
-      />
 
       <div className="relative max-w-[1320px] mx-auto px-12 lg:px-7 sm:px-5">
         {/* Label row */}
         <div className="flex items-center gap-3 mb-10">
-          <span className="text-[10.5px] tracking-[0.18em] uppercase font-medium text-paper/60">
+          <span className="text-[10.5px] tracking-[0.18em] uppercase font-medium text-ink/60">
             — Two houses, one standard
           </span>
-          <span className="text-[10.5px] tracking-[0.15em] font-medium text-paper/50">
+          <span className="text-[10.5px] tracking-[0.15em] font-medium text-ink/40">
             SECTION 01 / 02
           </span>
-          <span className="flex-1 h-px bg-paper/10" />
+          <span className="flex-1 h-px bg-ink/10" />
         </div>
 
         {/* Intro */}
         <div className="flex flex-col items-center text-center py-12 gap-5">
           <h2
-            className="font-extrabold leading-[1.05] tracking-[-0.035em] text-paper"
+            className="font-extrabold leading-[1.05] tracking-[-0.035em] text-ink"
             style={{ fontSize: "clamp(28px, 3.2vw, 46px)" }}
           >
             Two specialist brands.
             <br />
-            <em className="not-italic text-gold">One trading house.</em>
+            <em className="not-italic text-red">One trading house.</em>
           </h2>
-          <p className="text-[18px] text-paper/70 max-w-[560px] leading-[1.65]">
+          <p className="text-[18px] text-ink/70 max-w-[560px] leading-[1.65]">
             Each operates with its own catalogue, voice, and origin network,
             while being held together under the discipline of PT Kalwaneira
             Terra Prospera.

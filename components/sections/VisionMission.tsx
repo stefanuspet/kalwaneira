@@ -36,7 +36,7 @@ export default function VisionMission() {
           <div>
             {/* Vision */}
             <div className="py-10 border-t border-ink/20">
-              <div className="inline-flex items-center px-3 py-1 rounded-full text-[10.5px] tracking-[0.12em] uppercase font-semibold text-ink bg-ink/10 border border-ink/25 mb-5">
+              <div className="inline-flex items-center px-3 py-1 rounded-full text-[10.5px] tracking-[0.12em] uppercase font-semibold text-white bg-red border border-transparent mb-5 shadow-[0_4px_14px_-6px_rgba(225,29,42,0.5)]">
                 Vision
               </div>
               <h3 className="font-bold text-[22px] tracking-[-0.02em] text-ink mb-4 leading-[1.2]">
@@ -51,7 +51,7 @@ export default function VisionMission() {
 
             {/* Mission */}
             <div className="py-10">
-              <div className="inline-flex items-center px-3 py-1 rounded-full text-[10.5px] tracking-[0.12em] uppercase font-semibold text-ink bg-ink/10 border border-ink/25 mb-5">
+              <div className="inline-flex items-center px-3 py-1 rounded-full text-[10.5px] tracking-[0.12em] uppercase font-semibold text-white bg-red border border-transparent mb-5 shadow-[0_4px_14px_-6px_rgba(225,29,42,0.5)]">
                 Mission · Five quiet commitments
               </div>
               <div className="flex flex-col gap-0">

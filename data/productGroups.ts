@@ -17,13 +17,13 @@ export const nusaterasoGroups: ProductGroup[] = [
         id: "vanilla-grade-b",
         name: "Grade B",
         desc: "Slightly thinner pods with strong vanillin content. Suitable for extraction and commercial flavoring.",
-        image: "/images/nusateraso/Grade_B_(Vanilla Bean).png",
+        image: "/images/nusateraso/B.jpeg",
       },
       {
         id: "vanilla-grade-c",
         name: "Grade C",
         desc: "Split or shorter beans with high fragrance. Best used for powder, extract, or industrial processing.",
-        image: "/images/nusateraso/Grade_C_(Vanilla Bean).png",
+        image: "/images/nusateraso/C.jpeg",
       },
       {
         id: "vanilla-paste",
