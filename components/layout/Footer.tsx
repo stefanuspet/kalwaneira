@@ -15,9 +15,17 @@ const footerCols = [
     title: "Brands",
     links: [
       { label: "Nusateraso", href: "/nusateraso" },
-      { label: "nusateraso.com ↗", href: "https://www.nusateraso.com", external: true },
+      {
+        label: "nusateraso.com ↗",
+        href: "https://www.nusateraso.com",
+        external: true,
+      },
       { label: "Zanetuno", href: "/zanetuno" },
-      { label: "zanetuno.com ↗", href: "https://www.zanetuno.com", external: true },
+      {
+        label: "zanetuno.com ↗",
+        href: "https://www.zanetuno.com",
+        external: true,
+      },
     ],
   },
   {
@@ -30,19 +38,25 @@ const footerCols = [
   },
 ];
 
-const BG = "#D2C4B7";
+const BG = "#FFFBEA";
 const TEXT = "#4A3732";
 
-export default function Footer({ variant = 'dark' }: { variant?: 'dark' | 'warm' }) {
+export default function Footer({
+  variant = "dark",
+}: {
+  variant?: "dark" | "warm";
+}) {
   return (
     <footer
       className="relative pt-24 pb-10 overflow-hidden"
       style={{ backgroundColor: BG, color: TEXT }}
     >
-
       <div className="max-w-[1320px] mx-auto px-12 lg:px-7 sm:px-5">
         {/* Top grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-12 pb-16 border-b" style={{ borderColor: `${TEXT}20` }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-12 pb-16 border-b"
+          style={{ borderColor: `${TEXT}20` }}
+        >
           {/* Brand column */}
           <div className="flex flex-col gap-5">
             <Image
@@ -52,10 +66,16 @@ export default function Footer({ variant = 'dark' }: { variant?: 'dark' | 'warm'
               height={132}
               className="object-contain"
             />
-            <p className="text-[15px] max-w-[300px] leading-relaxed font-bold" style={{ color: TEXT }}>
+            <p
+              className="text-[15px] max-w-[300px] leading-relaxed font-bold"
+              style={{ color: TEXT }}
+            >
               A Global Trading House. Connecting Markets, Creating Value.
             </p>
-            <p className="text-[11px] tracking-[0.1em] leading-[1.8] font-bold uppercase" style={{ color: TEXT }}>
+            <p
+              className="text-[11px] tracking-[0.1em] leading-[1.8] font-bold uppercase"
+              style={{ color: TEXT }}
+            >
               PT Kalwaneira Terra Prospera
               <br />
               Jakarta · Indonesia · GMT+7
@@ -65,7 +85,10 @@ export default function Footer({ variant = 'dark' }: { variant?: 'dark' | 'warm'
           {/* Link columns */}
           {footerCols.map((col) => (
             <div key={col.title}>
-              <h6 className="text-[10px] tracking-[0.2em] uppercase font-bold mb-[18px]" style={{ color: TEXT }}>
+              <h6
+                className="text-[10px] tracking-[0.2em] uppercase font-bold mb-[18px]"
+                style={{ color: TEXT }}
+              >
                 {col.title}
               </h6>
               <ul className="flex flex-col gap-2.5">
@@ -99,7 +122,10 @@ export default function Footer({ variant = 'dark' }: { variant?: 'dark' | 'warm'
 
         {/* Bottom bar */}
         <div className="flex items-center justify-between pt-8 flex-wrap gap-3 sm:flex-col sm:items-start">
-          <span className="text-[11px] tracking-[0.05em] font-bold" style={{ color: TEXT }}>
+          <span
+            className="text-[11px] tracking-[0.05em] font-bold"
+            style={{ color: TEXT }}
+          >
             © 2026 PT Kalwaneira Terra Prospera — All rights reserved.
           </span>
         </div>
