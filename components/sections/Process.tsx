@@ -27,11 +27,11 @@ export default function Process() {
 
         <div className="flex flex-col items-center text-center mb-[64px] gap-5">
           <h2
-            className="font-extrabold leading-[1.05] tracking-[-0.03em] text-red"
-            style={{ fontSize: "clamp(28px, 3.2vw, 46px)" }}
+            className="font-bold leading-[1.3] tracking-[-0.01em] text-red"
+            style={{ fontSize: "clamp(16px, 1.6vw, 22px)" }}
           >
-            Bridging the archipelago to the global market <br />
-            through a comprehensive, end-to-end <br /> documented process
+            Bridging the archipelago to the global market through a
+            comprehensive, end-to-end documented process.
           </h2>
           {/* <p className="text-[16px] text-ink/80 font-normal leading-[1.6] max-w-[480px]">
             A four-step process. Documented end-to-end.

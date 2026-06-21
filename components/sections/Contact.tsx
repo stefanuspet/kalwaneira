@@ -53,8 +53,8 @@ export default function Contact() {
           {/* Left — intro */}
           <div>
             <h2
-              className="font-extrabold leading-[1.05] tracking-[-0.035em] text-red mb-6"
-              style={{ fontSize: "clamp(28px, 3.2vw, 46px)" }}
+              className="font-normal leading-[1.3] tracking-[-0.01em] text-ink mb-6"
+              style={{ fontSize: "16px" }}
             >
               Share your requirements, destination, and timeline with us. We
               will provide a tailored logistical strategy to ensure seamless

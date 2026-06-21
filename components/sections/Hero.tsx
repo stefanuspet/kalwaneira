@@ -1,14 +1,32 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section
       className="relative overflow-hidden min-h-svh flex items-center justify-center"
-      style={{ backgroundColor: '#DA6629' }}
       id="top"
     >
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero/hero1.jpeg"
+          alt=""
+          fill
+          priority
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
+      </div>
 
-      <div className="relative w-full max-w-[1320px] mx-auto px-12 lg:px-7 sm:px-5 py-[120px] sm:py-20 flex flex-col items-center text-center">
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.55) 100%)",
+        }}
+      />
+
+      <div className="relative z-[2] w-full max-w-[1320px] mx-auto px-12 lg:px-7 sm:px-5 py-[120px] sm:py-20 flex flex-col items-center text-center">
         {/* Heading */}
         <h1
           className="font-extrabold leading-[1.1] tracking-[-0.035em] text-white"
